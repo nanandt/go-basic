@@ -1,5 +1,20 @@
 package main
 
+import "fmt"
+
+func logging(){
+	fmt.Println("Selesai Memanggil function")
+}
+
+// defer berfungsing memanggil func setelah func tertentu di execute walopun func tsb error
+
+func runApplication(value int){
+	defer logging()
+	fmt.Println("Run Application")
+	result := 10 / value
+	fmt.Println("Result ", result)
+}
+
 func main() {
-	$END$
+	runApplication(0)
 }
